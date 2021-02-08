@@ -1,0 +1,134 @@
+body,html {
+	
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+
+body{
+	background-image:  url(/img/backg.png) ;
+	background-color: #F5F5F5;
+	background-position: fixed;
+	background-size: cover;
+}
+
+.d-flex{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+	width: 100%;
+	height: 100%;
+}
+
+.auth{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 32%;
+	height: 100%;
+}
+
+.authbody{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 85%;
+	max-width: 320px;
+}
+
+.f-image{
+
+	width: 70px;
+	height: 74px;
+}
+
+.text{
+	font-family: "Exo 2", "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 28px;
+	line-height: auto;
+	text-align: center;
+
+	color: #1F1CAF;
+
+}
+
+.un-input{
+	width: 100%;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	margin-top: 15px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 1.5;
+	border-radius: 0.5rem;
+	border: 0px;
+}
+
+
+.button{
+	font-family: "Exo 2", "Arial", sans-serif;
+	font-style: normal;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	width: 240px;
+	height: 54px;
+	color: #FFFFFF;
+	font-size: 20px;
+	cursor: pointer;
+
+	background: #0094DA;
+	transition: -webkit-box-shadow .3s ease-in-out;
+
+}
+
+.button:hover{
+	box-shadow: 0px 4px 40px 10px rgba(0, 148, 218, 0.29);
+}
+
+.button:active {
+    background:#105E83;
+    }
+
+.registration{
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	color: #0094DA;
+
+}
+
+.error_color{
+	font-family: "Exo 2", "Arial", sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	color: #EA1B0E;
+}
+
+.picture{
+	flex-grow: 1;
+	background-image: url(/img/laptop1.webp);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 992px){
+body,html{
+	overflow-y: scroll;
+	height: inherit;
+}
+.picture{
+	display: none;
+}
+.auth{
+	width: 100%;
+	height: inherit;
+	padding: 20px 0;
+}
+}
