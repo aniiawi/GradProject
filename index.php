@@ -131,18 +131,17 @@ if ($user === false) {
         <p class="desktop-caption"> Мои лабораторные работы </p>
         <div class="cards">
 
-        <li class="card">
-          <p class="course-description"> Технический контроль и диагностика систем ЛА - Лабораторная работа №4 “Построение программы поиска неисправностей методом динамического программирования”</p>
-          <div type="button" onclick="document.location='/course.php'" class="course-goto"><p>Перейти</p></div>
-      </li>
-     <li class="card">
-          <p class="course-description"> Технический контроль и диагностика систем ЛА - Лабораторная работа №4 “Построение программы поиска неисправностей методом динамического программирования”</p>
-          <div type="button" onclick="document.location='/course.php'" class="course-goto"><p>Перейти</p></div>
-      </li>
-      <li class="card">
-          <p class="course-description"> Технический контроль и диагностика систем ЛА - Лабораторная работа №4 “Построение программы поиска неисправностей методом динамического программирования”</p>
-          <div type="button" onclick="document.location='/course.php'" class="course-goto"><p>Перейти</p></div>
-      </li>
+            <?php
+            if ($user['role_id'] == 3){
+            foreach(getAssignedLabs($pdo, $user['user_id']) as $value){
+            ?>
+            <li class="card">
+              <p class="course-description"><?=$value["lab_name"]; ?></p>
+                <div type="button" onclick="document.location='/labs.php?lab_id=<?=$value['lab_id']; ?>'" class="course-goto"><p>Перейти</p> </div>
+            </li>
+            <?php
+            }}
+            ?>
     </div>
     </div>
 

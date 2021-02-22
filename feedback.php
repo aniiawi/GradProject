@@ -10,9 +10,10 @@ if ($user === false) {
 <!DOCTYPE html>
 <html lang="ru">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, inital-scale=1">
-    <title>Мои курсы - Веб-портал по лабораторным работам МАИ</title>
+    <title>Обратная связь - Веб-портал по лабораторным работам МАИ</title>
     <link rel="shortcut icon" href="https://dev.mai.ru/generic/images/favicon/1.6/favicon-2015.ico" type="image/x-icon">
     <link rel="stylesheet" href="/css/feedback.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -64,7 +65,7 @@ if ($user === false) {
           <ul class="menu_list-mobile">
            
             <li class="homepage">
-            <div type="submit" onclick="document.location='/index.php'" class="not_current"><img class="not-current-image" xmlns="http://www.w3.org/2000/svg" src="/img/home.svg"></img> <p>Рабочий стол </p></div></li>
+            <div type="submit" onclick="document.location='/index.php'" class="not_current"><img class="not-current-image" xmlns="http://www.w3.org/2000/svg" src="/img/home2.svg"></img> Рабочий стол </div></li>
 
             <li class="theory">
             <div type="submit" onclick="document.location='/courses.php'" class="not_current"><img class="not-current-image" xmlns="http://www.w3.org/2000/svg" src="/img/theory.svg"></img> Теория</div></li>
@@ -103,23 +104,44 @@ if ($user === false) {
         </form>
         <script  defer src="js/searchbar.js"></script>
         <script>
-            var courses = [<?php
-            $myArr = dbtoarray($pdo);
-            $names_arr = array();
-            for($i=0; $i < count($myArr); $i++){
-              $names_arr[] = $myArr[$i]["course_name"];
-            }
-            echo '"'.implode('","', $names_arr).'"'
-          ?>];
+            <?php
+              if ($user['role_id'] == 1) {
+                  $myArr = dbtoarray($pdo);
+              }else{
+                  $myArr = getAssignedCourses($pdo, $user['user_id']);
+              }
+              $names_arr = array();
+              $ids_arr = array();
+              for($i=0; $i < count($myArr); $i++){
+                  $names_arr[] = $myArr[$i]["course_name"];
+                  $ids_arr[] = $myArr[$i]["course_id"];
+              };
+              ?>
+              var courses = [ <?php
+                  echo '"'.implode('","', $names_arr).'"'
+                  ?>];
+              var courses_id = [<?php
+                  echo '"'.implode('","', $ids_arr).'"'
+                  ?>];
         </script>
         <p class="desktop">Обратная связь</p>
         <div class="cards">
           <form name="form" action="mail.php" method="post" id="form_message">
-              <input type="text" class="user-input" placeholder="ФИО" name="fio-name" required>
+            <div class="upper-container">
+              <input type="text" class="user-input" placeholder="Имя" name="fio-name" required>
               <input type="text" class="user-input" placeholder="Группа" name="group-name" required>
               <input type="text" class="user-input" placeholder="E-mail" name="email" required>
+              <select class="user-input" name="subjects">
+                  <option class="selection-basic">Выберите тему вопроса...</option>
+                  <option class="selection" value="Вопрос по выполнению работы">Вопрос по выполнению работы</option>
+                  <option class="selection" value="Неточность в содержании">Неточность в содержании</option>
+                  <option class="selection" value="Огранизационные вопросы">Организационные вопросы</option>
+                  <option class="selection" value="Другое">Другое</option>
+              </select></div>
+
+              <div class="lower-container"><p><input type="text" class="user-input-msg" placeholder="Ваше сообщение" name="user-message" required></p></div>
                     
-            <input name="submit" type="submit" value="Отправить" class="send-button">
+            <p><input name="submit" type="submit" value="Отправить" class="send-button"></p>
   </form>
         
         </div>
