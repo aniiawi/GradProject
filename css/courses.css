@@ -31,19 +31,6 @@ body{
 }
 
 
-/*.text{
-	font-family: "Exo 2", "Arial", sans-serif;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 16px;
-	line-height: auto;
-	text-align: center;
-
-	color: #1F1CAF;
-
-}
-*/
-
 .current{
 	font-family: "Exo 2", "Arial", sans-serif;
 	font-style: normal;
@@ -72,6 +59,7 @@ body{
 	height: 20px;
 	color: #2498FF;
 	padding-right: 3px;
+	vertical-align: middle;
 }
 
 .not-current-image{
@@ -233,6 +221,7 @@ body{
   color: #000000;
 }
 
+
 .search-button:hover{
   background-color: #DDDDDD;
 
@@ -312,113 +301,17 @@ body{
 	flex-direction: column;
 	align-items: center;
 	text-align: left;
-	background: #FFFFFF;
-	border-radius: 0.5rem;
-	width: 320px;
+	/*background: #FFFFFF;
+	border-radius: 0.5rem;*/
+	width: 30%;
+	height: 10%;
 	
 	margin-right: 30px;
 	margin-bottom: 20px;
 
-}
-
-.course-description{
-	font-family: "Exo 2", "Arial", sans-serif;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	color: #3D3D3D;
-	padding: 10px 20px;
 
 }
 
-.course-goto{
-	font-family: "Exo 2", "Arial", sans-serif;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	background: #2498FF;
-	border-radius: 0.3rem;
-	color: #FFFFFF;
-	padding-left:20px;
-	padding-right: 20px;
-	margin-bottom: 20px;
-	cursor: pointer;
-	transition: -webkit-box-shadow .3s ease-in-out;
-}
-
-.course-goto:hover{
-	box-shadow: 0px 2px 20px 5px rgba(0, 148, 218, 0.29);
-}
-
-.course-goto:active {
-    background:#105E83;
-    }
-
-.info-menu{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	/*flex-grow: 1;*/
-	width: 25%;
-	height: 100%;
-	overflow-x: hidden;
-	overflow: scroll;
-	background: #FFFFFF;
-	border-radius: 0.5rem 0px 0px 0.5rem;
-
-}
-
-.info-contents{
-	width: 80%;
-	align-items: center;
-	justify-content: center;
-}
-
-.avatar{
-	/*padding-top: 30%;*/
-  	align-items: center;
-  	text-align: center;
-}
-
-.avatar-img{
-	width:150px;
-  	height: auto;
-}
-
-.fio-name{
-	font-family: "Exo 2", "Arial", sans-serif;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 24px;
-	line-height: auto;
-	text-align: center;
-	color: #5E5E65;
-	margin-bottom: 10%;
-	margin-top: 10%;
-}
-
-.caption{
-	font-family: "Roboto", sans-serif;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 12px;
-	color: #A5A5A5;
-}
-
-.caption-group{
-	font-family: "Exo 2", "Arial", sans-serif;
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	color: #3D3D3D;
-
-}
-
-.choose-course{
-	align-items: left;
-	justify-content: left;
-}
 
 .course-button{
 	font-family: "Exo 2", "Arial", sans-serif;
@@ -426,7 +319,7 @@ body{
 	font-weight: 600;
 	font-size: 14px;
 	color: #3D3D3D;
-	background: #F5F5F5;
+	background: #FFFFFF;
 	border-radius: 1rem;
 	border: 0px;
 	text-align: left;
@@ -436,10 +329,10 @@ body{
 	padding: 10px;
 	padding-left: 30px;
 	padding-right: 30px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	display: flex;
 	float: right;
-	width: 80%;
+	flex-grow: 1;
 }
 
 .button-text{
@@ -458,17 +351,10 @@ body{
 
 .course-button:hover{
 	border: 1px solid #1F1CAF;
-	width: 100%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 
 .course-button:active{
-	width: 100%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+
 }
 
 @media screen and (max-width: 1080px){
@@ -592,19 +478,6 @@ body,html{
 }
 
 
-.course-button{
-	width: 100%;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-}
-
-.course-button:hover{
-	border: 1px solid #1F1CAF;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    width: 100%;
-}
 }
 
 
@@ -625,14 +498,3 @@ body,html{
 }
 }
 
-@media only screen and (max-height: 700px) and (min-height: 551px){
-.avatar-img{
-	padding-top: 40%;
-}
-.avatar{
-	padding-top: 40px;
-}
-.my-courses{
-	margin-bottom: 20px;
-}
-}
