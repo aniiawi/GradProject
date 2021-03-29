@@ -171,8 +171,7 @@ body{
 
 .working-area{
 	flex-grow: 1;
-	/*flex-direction: row;
-	flex-wrap: row wrap;*/
+	width: 60%;
 	background-image: url(/img/bac3.svg);
 	background-size: cover;
 	background-repeat: repeat-y;
@@ -285,6 +284,7 @@ body{
 	font-size: 38px;
 	color: #1F1CAF;
 	padding-left: 5%;
+
 	margin-bottom: 5%;
 }
 
@@ -314,12 +314,6 @@ body{
    	width: 100%;
 }
 
-.lower-container{
-	display: flex;
-	flex-wrap: wrap;
-   	justify-content: flex-start;
-   	width: 100%;
-}
 .user-input{
 	font-family: "Roboto", sans-serif;
   font-style: normal;
@@ -336,27 +330,42 @@ body{
   padding-left: 5%;
 }
 
+#dropdown{
+	height: 30px;
+	color: #5E5E65;
+}
+
+
 .selection-basic{
 	font-family: "Roboto", sans-serif;
   font-style: normal;
-  color: #343434;;
+  color: #343434;
 }
 
 .user-input-msg{
 	font-family: "Roboto", sans-serif;
   font-style: normal;
+  display: flex;
   border: 0px;
   background-color: #FFFFFF;
   padding: 4px;
   font-size: 14px;
   border-radius: 0.6rem;
-  width: 100%;
   margin-bottom: 20px;
   height: 20vh;
   margin-right: 15px;
   padding-left: 5%;
-  text-align: top;
+  flex-basis: 100%;
+  padding-top: 10px;
+  padding-right: 5%;
+
 }
+
+textarea {
+    width: 87%;
+    margin-bottom: 40px;
+}
+
 
 .send-button{
 	font-family: "Exo 2", "Arial", sans-serif;
@@ -494,18 +503,11 @@ body{
 }
 
 .course-button:hover{
-	border: 1px solid #1F1CAF;
-	width: 100%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+	box-shadow: 0 0 3px #1F1CAF;
 }
 
 .course-button:active{
-	width: 100%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+	background: #E1DFDF;
 }
 
 .feedback_result{
@@ -634,7 +636,9 @@ body,html{
 .user-input-msg{
 	width: 100%;
 }
-
+textarea {
+    width: 100%;
+}
 
 .send-button{
 	width: 100%;
@@ -657,15 +661,9 @@ body,html{
 
 .course-button{
 	width: 100%;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
 }
 
 .course-button:hover{
-	border: 1px solid #1F1CAF;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     width: 100%;
 }
 }

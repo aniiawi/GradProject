@@ -131,7 +131,7 @@ if ($user === false) {
               <input type="text" class="user-input" placeholder="Имя" name="fio-name" required>
               <input type="text" class="user-input" placeholder="Группа" name="group-name" required>
               <input type="text" class="user-input" placeholder="E-mail" name="email" required>
-              <select class="user-input" name="subjects">
+              <select class="user-input" name="subjects" id="dropdown">
                   <option class="selection-basic">Выберите тему вопроса...</option>
                   <option class="selection" value="Вопрос по выполнению работы">Вопрос по выполнению работы</option>
                   <option class="selection" value="Неточность в содержании">Неточность в содержании</option>
@@ -139,12 +139,12 @@ if ($user === false) {
                   <option class="selection" value="Другое">Другое</option>
               </select></div>
 
-              <div class="lower-container"><p><input type="text" class="user-input-msg" placeholder="Ваше сообщение" name="user-message" required></p></div>
+              <p class="upper-container"><textarea type="text" class="user-input-msg" placeholder="Ваше сообщение" name="user-message" cols="num" rows="num" required></textarea></p>
                     
-            <p><input name="submit" type="submit" value="Отправить" class="send-button"></p>
+            <p> <input name="submit" type="submit" value="Отправить" class="send-button"></p>
   </form>
         
-        </div>
+    </div>    
         
        
     </div>

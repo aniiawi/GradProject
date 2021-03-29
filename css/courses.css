@@ -240,7 +240,6 @@ body{
   border-bottom: none;
   border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
   left: 0;
   right: 0;
@@ -304,7 +303,6 @@ body{
 	/*background: #FFFFFF;
 	border-radius: 0.5rem;*/
 	width: 30%;
-	height: 10%;
 	
 	margin-right: 30px;
 	margin-bottom: 20px;
@@ -321,7 +319,8 @@ body{
 	color: #3D3D3D;
 	background: #FFFFFF;
 	border-radius: 1rem;
-	border: 0px;
+	border: 0px; 
+	width: 80%;
 	text-align: left;
 	align-items: center;
 	vertical-align: middle;
@@ -350,11 +349,11 @@ body{
 }
 
 .course-button:hover{
-	border: 1px solid #1F1CAF;
+	box-shadow: 0 0 3px #1F1CAF;
 }
 
 .course-button:active{
-
+	background: #E1DFDF;
 }
 
 @media screen and (max-width: 1080px){
@@ -409,6 +408,11 @@ body,html{
 
 .menu-mobile #navLinks{
 	display: none;
+}
+
+.card{
+	width: 100%;
+
 }
 
 
@@ -490,11 +494,14 @@ body,html{
 .avatar{
 	padding-top: 0;
 }
+
+
 }
 
 @media (min-width: 1081px){
 .menu-mobile{
 	display: none;
 }
+
 }
 

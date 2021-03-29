@@ -64,7 +64,7 @@ if ($user === false) {
           <ul class="menu_list-mobile">
            
             <li class="homepage">
-            <div type="submit" onclick="document.location='/index.php'" class="not_current"><img class="not-current-image" xmlns="http://www.w3.org/2000/svg" src="/img/home.svg"></img> <p>Рабочий стол </p></div></li>
+            <div type="submit" onclick="document.location='/index.php'" class="not_current"><img class="not-current-image" xmlns="http://www.w3.org/2000/svg" src="/img/home2.svg"></img> Рабочий стол </div></li>
 
             <li class="theory">
             <div type="submit" onclick="document.location='/courses.php'" class="current"><img class="current-image" xmlns="http://www.w3.org/2000/svg" src="/img/theory2.svg"></img> Теория</div></li>
@@ -133,7 +133,7 @@ if ($user === false) {
                 foreach(getAssignedCourses($pdo, $user['user_id']) as $value){
              ?>
             <li class="card">
-              <div type="button" onclick="document.location='/course.php?course_id=<?=$value['course_id']; ?>'" class="course-button"><p class="button-text"><?=$value['course_name']; ?> </p><img class="course-image" xmlns="http://www.w3.org/2000/svg" src="/img/arrow.svg"></img> </div>
+              <div type="button" onclick="document.location='/labs.php?course_id=<?=$value['course_id']; ?>'" class="course-button"><p class="button-text"><?=$value['course_name']; ?> </p><img class="course-image" xmlns="http://www.w3.org/2000/svg" src="/img/arrow.svg"></img> </div>
             </li>
             <?php
           }}
