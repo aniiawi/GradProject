@@ -167,7 +167,7 @@ if ($user === false) {
                 foreach(getAssignedCourses($pdo, $user['user_id']) as $value){
              ?>
             <li class="choose-course">
-              <div type="button" onclick="document.location='/course.php?course_id=<?=$value['course_id']; ?>'" class="course-button"><p class="button-text"><?=$value['course_name']; ?> </p><img class="course-image" xmlns="http://www.w3.org/2000/svg" src="/img/arrow.svg"></img> </div>
+              <div type="button" onclick="document.location='/labs.php?course_id=<?=$value['course_id']; ?>'" class="course-button"><p class="button-text"><?=$value['course_name']; ?> </p><img class="course-image" xmlns="http://www.w3.org/2000/svg" src="/img/arrow.svg"></img> </div>
             </li>
             <?php
           }}

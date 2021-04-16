@@ -27,16 +27,20 @@ if (!$assigned){
 }
 
 $test= getTestByLabId($pdo, $data['lab_id']);
+if ($test == false || empty($test)){
+    exit();
+}
 $jsonObj = json_decode($test['test_content'], true);
 
 $checks = [
     'check_list' => []
 ];
-
+$cnt = 0;
 $correct_cnt = 0;
 foreach ($jsonObj as $value){
     $question_id = $value['question_id'];
     $answ = $data['answers'][$question_id];
+    $cnt++;
     if ($answ == NULL || gettype($answ) != gettype($value['correctAnswer'])){
         $checks['check_list'][strval($question_id)] = false;
         continue;
@@ -59,6 +63,9 @@ foreach ($jsonObj as $value){
     $checks['check_list'][strval($question_id)] = $correct;
 }
 $checks['right'] = $correct_cnt;
+$checks['cnt'] = $cnt;
+
+insertTestResults($pdo, $user['user_id'], $data['lab_id'], $correct_cnt, $cnt);
 
 header('Content-type: application/json');
 echo json_encode($checks);

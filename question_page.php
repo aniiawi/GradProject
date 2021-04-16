@@ -27,6 +27,8 @@ if (!$assigned){
     exit();
 }
 
+$results = getTestResults($pdo, $user['user_id'], $_GET['lab_id']);
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -174,7 +176,13 @@ if (!$assigned){
 
             <div  id="nextButton" class="goto-test-mod">Далее</div>
             <div  id="nextButton2" class="goto-test-mod" style="display: none;">Далее</div>
-        </div>
+            <p class="take-quizrs">Прошлые результаты:</p>
+               <?php
+                    for ($k=0; $k < count($results); $k++){
+               echo '<p class="take-quizrs take-quizrs-span">  '.strval($results[$k]['time']).':        <span class="take-quizrs">'.strval($results[$k]['correct']).'/'.strval($results[$k]['count']).'</span></p>';
+                    }
+               ?>
+         </div>
       </div>
 
     </div>
