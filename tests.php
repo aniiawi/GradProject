@@ -128,16 +128,14 @@ if ($user === false) {
         <p class="desktop-caption"> Мои курсы </p>
         <div class="cards">
           
-            <?php
-            if ($user['role_id'] == 3){
-                foreach(getAssignedCourses($pdo, $user['user_id']) as $value){
-             ?>
+            
             <li class="card">
-              <div type="button" onclick="document.location='/labs.php?course_id=<?=$value['course_id']; ?>'" class="course-button"><p class="button-text"><?=$value['course_name']; ?> </p><img class="course-image" xmlns="http://www.w3.org/2000/svg" src="/img/arrow.svg"></img> </div>
+              <div type="button" onclick="document.location='/labs_control.php'" class="course-button"><p class="button-text"> Контроль и диагностика ИС </p><img class="course-image" xmlns="http://www.w3.org/2000/svg" src="/img/arrow.svg"></img> </div>
             </li>
-            <?php
-          }}
-              ?>
+            <li class="card">
+              <div type="button" onclick="document.location='/labs_methods.php'" class="course-button"><p class="button-text"> Методы оптимизации ИС </p><img class="course-image" xmlns="http://www.w3.org/2000/svg" src="/img/arrow.svg"></img> </div>
+            </li>
+            
         
         </div>
        

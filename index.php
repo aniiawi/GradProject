@@ -44,7 +44,7 @@ if ($user === false) {
         	<?php
             if ($user['role_id'] < 3){
             ?>  <li class="add_llab">
-                <div type="submit" onclick="document.location='/addlab.php'" class="add_lab"><img class="addlab-image" xmlns="http://www.w3.org/2000/svg" src="/img/addlab.svg"></img> Генератор кодов</div></li>
+                <div type="submit" onclick="document.location='/gen_codes.php'" class="add_lab"><img class="addlab-image" xmlns="http://www.w3.org/2000/svg" src="/img/addlab.svg"></img> Генератор кодов</div></li>
             <?php
             }
             ?>
